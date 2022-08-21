@@ -198,3 +198,19 @@ elsif country == "us" then p "Hello"
 elsif country == "italy" then p "Ciao"
 else p "国データが登録されていないようです"
 end
+
+# Rubyではdefを利用してメソッドを定義する。メソッド名は変数と同様にスネークケースで書く
+
+def add(a,b)
+  p a + b
+end
+
+add(10,5)
+
+# 引数がないメソッドの場合は()をつけないことが多い
+
+def greet
+  p "こんにちは"
+end
+
+greet
