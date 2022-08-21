@@ -237,3 +237,42 @@ fizzbuzz(15)
 fizzbuzz(20)
 fizzbuzz(9)
 fizzbuzz(22)
+
+# クラスについて
+# .classメソッドを呼び出すことでクラス名を確認することができる
+
+p "abc".class #文字列はStringクラス
+
+# 文字列は途中で改行することも可能
+
+puts "abc
+def"
+
+# 長文に渡るときはヒアドキュメントを利用すると便利
+
+t = <<TEXT
+ヒアドキュメントのテスト
+識別子(ここではTEXT)間の文章を書くときに便利
+三行目
+四行目
+TEXT
+
+puts t
+
+# ヒアドキュメント内でも式展開が可能
+
+u = <<TEXT
+ヒアドキュメントのテスト
+15でfizzbuzzメソッドを実行した結果は
+#{fizzbuzz(15)}です
+TEXT
+
+puts u
+
+# ヒアドキュメントの識別子にメソッドを利用することも可能
+
+o = <<TEXT.upcase
+abcdefghijkenl
+TEXT
+
+puts o
