@@ -148,3 +148,53 @@ p !o
 p !q
 p !r
 p !(n && o)
+
+# if文を利用することで条件分岐をさせることができる
+
+if n
+  p "nは真です"
+else
+  p "nは真ではありません"
+end
+
+if q
+  p "Qは真です"
+else
+  p "qは真ではありません"
+end
+
+s = 10
+
+if s < 15
+  p "sは15未満です"
+elsif s > 10
+  p "sは11以上です"
+end
+
+country = "italy"
+
+if country == "japan"
+  p "こんにちは"
+elsif country == "us"
+  p "Hello"
+elsif country == "italy"
+  p "Ciao"
+else
+  p "国データが登録されていないようです"
+end
+
+# if文は修飾子として文の後ろに置くことも可能
+
+point = 10
+day = 1
+
+point *= 5 if day == 1
+p point
+
+# 条件のあとにthenを置くことでその条件が真だった場合の処理を一行にまとめることも可能（ただし使用頻度は高くない)
+
+if country == "japan" then p "こんにちは"
+elsif country == "us" then p "Hello"
+elsif country == "italy" then p "Ciao"
+else p "国データが登録されていないようです"
+end
