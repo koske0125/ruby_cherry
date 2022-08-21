@@ -214,3 +214,26 @@ def greet
 end
 
 greet
+
+# fizzbuzzプログラムの実装
+# 3で割り切れる数値を引数に渡すと"Fizz"を返す
+# 5で割り切れる数値を引数に渡すと"Buzz"を返す
+# 15で割り切れる数値を引数に渡すと"FizzBuzz"を返す。
+# それ以外の数値はその数値を文字列に変えて返す。
+
+def fizzbuzz(a)
+  if a % 15 == 0
+    p "FizzBuzz"
+  elsif a % 5 == 0
+    p "Buzz"
+  elsif a % 3 == 0
+    p "Fizz"
+  else
+    p a.to_s
+  end
+end
+
+fizzbuzz(15)
+fizzbuzz(20)
+fizzbuzz(9)
+fizzbuzz(22)
