@@ -283,3 +283,19 @@ puts o
 p 0b11111111 # 2進数
 p 0377 #8進数
 p 0xff #16進数
+
+# 数値のクラス
+# 数値は整数であればintegerクラス 少数はfloatクラスとなる
+
+p 10.class
+p 10.5.class
+
+# 有理数はRationalクラス 複素数はcomplexクラスとなる
+
+rational =  2 / 3r
+p rational.class
+
+complex = 0.3 - 0.5i
+p complex.class
+
+# これらの数値クラスはNumeric（数値）クラスと継承関係にある
