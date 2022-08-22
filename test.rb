@@ -316,3 +316,36 @@ p tr or fa
 
 # 優先順位は　! && || not and or なので! && || と同様には利用できない
 
+# unless文 ifと反対の意味を持つ。ifは条件が真のときのみ実行される一方、unlessは条件が偽のときのみ実行される
+
+status = "error"
+if status != "ok"
+  p "なにか異常があります"
+end
+
+unless status == "ok"
+  p "なにか異常があります"
+end
+
+# unlessにelseを組み合わせて条件が真だった場合の処理を書くことも可能
+
+unless status == "ok"
+  p "なにか異常があります"
+else
+  p "異常はありません"
+end
+
+# if文同様に戻り値を変数に代入したり、修飾子として文の後ろに置くことも可能。
+
+message =
+  unless status == "ok"
+    "なにか異常があります"
+  else
+    "正常です"
+  end
+
+p message
+
+p "なにか異常があります" unless status == "ok"
+
+# if文同様thenを入れることも可能
