@@ -299,3 +299,20 @@ complex = 0.3 - 0.5i
 p complex.class
 
 # これらの数値クラスはNumeric（数値）クラスと継承関係にある
+
+# && や　|| の戻り値は必ずしもtrue/falseにならず、最後に評価された式が返される
+
+p 1 && 2 && 3
+p 1 && nil && 3 # nil が評価された段階で式全体の偽が確定したため、nilまでで評価が終了し、nilが返る
+p 1 && false && 3 # falseもnil同様
+
+# && || ! に近いものとしてand or not がある
+
+tr = true
+fa = false
+
+p fa and tr
+p tr or fa
+
+# 優先順位は　! && || not and or なので! && || と同様には利用できない
+
