@@ -427,3 +427,54 @@ message = n >= 100? "nは100以上です" : "nは100未満です"
 
 p message
 
+# デフォルト値付きの引数
+# Rubyではメソッドを呼び出す際の引数に過不足があるとエラーが発生する
+
+def check_country(country)
+  case country
+  when "japan"
+    p "日本"
+  when "us"
+    p "アメリカ"
+  when "italy"
+    p "イタリア"
+  when "india"
+    p "インド"
+  else
+    p "該当する国がありません"
+  end
+end
+
+check_country("aaa")
+check_country("japan")
+check_country("us")
+check_country("italy")
+check_country("india")
+
+# エラーを防ぐためにメソッドの引数にデフォルト値を設定することが可能。こうすることでエラーを回避することができる
+
+def show_name(age = 12)
+  case age
+  when 12
+    p "たかし"
+  when 13
+    p "けんじ"
+  when 15
+    p "たろう"
+  else
+    p "該当する名前が存在しません"
+  end
+end
+
+show_name()
+show_name(13)
+show_name(15)
+show_name(22)
+
+# デフォルト値にはメソッドの戻り値や動的に変わる値を指定することも可能
+
+def show_time(time = Time.now)
+  p "#{time}"
+end
+
+show_time()
