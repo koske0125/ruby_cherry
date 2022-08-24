@@ -550,3 +550,23 @@ p normal_add(5,10)
 def endless_add(a,b) = a + b
 
 p endless_add(5,10)
+
+# 参照の概念
+# 変数a,変数bは同じ文字列であるが、オブジェクトとしては別物。どのオブジェクトが参照されているかはobject_idメソッドを実行すると判別可能
+
+a = "string"
+b = "string"
+
+p a.object_id
+p b.object_id
+
+c = b
+
+p c.object_id # 変数cに変数bを代入するとbとcは同じオブジェクトとなる
+
+# 同じオブジェクトを参照している場合、参照元の変数も変更される
+
+c.upcase!
+
+p c
+p b
