@@ -349,3 +349,58 @@ p message
 p "なにか異常があります" unless status == "ok"
 
 # if文同様thenを入れることも可能
+
+# case文
+# 1つのオブジェクト/式を複数の値と比較する場合はelsifを複数書くよりもcase文を利用したほうがシンプルになる
+
+case status
+when "ok"
+  p "case文でstatusがok"
+when "error"
+  p "case文でstatusがerror"
+else
+  p "case文でstatusがそれ以外"
+end
+
+# case文ではwhen節に複数の値を指定して、いずれかに一致すれば処理を実行するという条件分岐も可能
+
+country = "日本"
+
+case country
+when "america","アメリカ"
+  p "Hello"
+when "japan","日本"
+  p "こんにちは"
+when "italy","イタリア"
+  p "Ciao"
+else
+  p "当てはまる国がありません"
+end
+
+# case文をif文同様、最後に評価された式を戻り値として返すため、結果を変数に入れることが可能
+
+message =
+  case country
+  when "america","アメリカ"
+    "hello"
+  when "japan","日本"
+    "こんにちは"
+  when "italy","イタリア"
+    "Ciao"
+  else
+    "当てはまる国がありません"
+  end
+
+p message
+
+# thenも使用可能
+
+country = "india"
+
+case country
+when "america","アメリカ" then p "Hello"
+when "japan","日本" then p "こんにちは"
+when "italy","イタリア" then p "Ciao"
+else
+  p "当てはまる国がありません"
+end
