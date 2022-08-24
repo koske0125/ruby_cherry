@@ -478,3 +478,50 @@ def show_time(time = Time.now)
 end
 
 show_time()
+
+# 述語メソッド
+# Rubyのメソッド名は!,?で終わらせることができ、?で終わるメソッドは慣習的に真偽値を返すメソッドとなっている
+
+# empty?メソッド　最初から用意されている述語メソッドで空文字列であればtrue,そうでなければfalseを返す
+
+p "".empty?
+p "string".empty?
+
+# include?メソッド　最初から用意されている述語メソッドで引数の文字列が含まれていればtrue,そうでなければfalseを返す
+
+p "abc".include?("c")
+p "abc".include?("def")
+
+# odd?メソッド　最初から用意されている述語メソッドで奇数ならtrue,偶数ならfalseを返す
+p 1.odd?
+p 2.odd?
+
+# even?メソッド　最初から用意されている述語メソッドで偶数ならtrue,奇数ならfalseを返す
+
+p 1.even?
+p 2.even?
+
+# nil?メソッド　最初から用意されている述語メソッドでnilであればtrue,nilでなければfalseを返す
+
+p nil.nil?
+p "abc".nil?
+p 1.nil?
+
+# ?で終わるメソッドは自身で定義することも可能
+
+def multiple_of_five?(n)
+  n % 5 == 0
+end
+
+p multiple_of_five?(3)
+p multiple_of_five?(4)
+p multiple_of_five?(5)
+
+# !で終わるメソッドは!がついていないメソッドよりも危険という意味を持つ。
+# 例 upcaseメソッドは引数を大文字に変えた新しい文字列を返すが、upcase!メソッドは呼び出した文字列自身を大文字にして返す
+
+a = "ruby"
+p a.upcase
+p a
+p a.upcase!
+p a
