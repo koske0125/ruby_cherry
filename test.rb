@@ -527,3 +527,26 @@ p a.upcase!
 p a
 
 # このように渡したオブジェクトの状態を変更してしまうメソッドのことを破壊的メソッドという
+
+# エンドレスメソッド定義
+# Ruby3系ではendを省略して記述するエンドレスメソッドが使用できる
+
+def normal_hello
+  "hello"
+end
+
+p normal_hello
+
+def endless_hello = "endlesshello"
+
+p endless_hello
+
+def normal_add(a,b)
+  a + b
+end
+
+p normal_add(5,10)
+
+def endless_add(a,b) = a + b
+
+p endless_add(5,10)
