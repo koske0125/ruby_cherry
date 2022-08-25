@@ -570,3 +570,11 @@ c.upcase!
 
 p c
 p b
+
+# require/require_relative
+# 組み込みライブラリではない標準ライブラリやgemを利用する際は明示的にライブラリを読み込む必要がある
+
+require "date"
+p Date.today
+
+# 自身で作成したRubyプログラムを読み込む場合は require_relative "相対パス" という記述で読み込む
