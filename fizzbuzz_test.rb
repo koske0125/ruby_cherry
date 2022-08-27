@@ -1,17 +1,5 @@
-
-def fizzbuzz(n)
-  if n % 15 == 0
-    p "FizzBuzz"
-  elsif n % 5 == 0
-    "Buzz"
-  elsif n % 3 == 0
-    "Fizz"
-  else
-    n.to_s
-  end
-end
-
 require 'minitest/autorun'
+require_relative 'fizzbuzz_main'
 
 class FizzBuzzTest<Minitest::Test
   def test_fizz_buzz
