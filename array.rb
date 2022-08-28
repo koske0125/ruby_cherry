@@ -104,3 +104,12 @@ p d
 p d_sum = 0
 d.each {|n| d_sum += 2 * n}
 p d_sum
+
+# map/collectメソッド
+# mapメソッドは各要素に対して、ブロックを評価した結果を新しい配列にして返す。
+
+new_numbers = [1,2,3,4,5,6,7,8,9,10]
+ten_times_numbers = new_numbers.map{|n| n * 10}
+p ten_times_numbers
+
+# 上記ではnew.numbersをnに一個ずつ取り出して10倍したものを新しい配列として作成している。
