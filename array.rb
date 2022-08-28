@@ -113,3 +113,27 @@ ten_times_numbers = new_numbers.map{|n| n * 10}
 p ten_times_numbers
 
 # 上記ではnew.numbersをnに一個ずつ取り出して10倍したものを新しい配列として作成している。
+
+# select/find_all/rejectメソッド
+# selectメソッドは各要素に対してブロックを評価し、その戻り値がtrueとなる要素のみを配列にして返すメソッド
+
+three_multiple_numbers = ten_times_numbers.select do|n|
+  n % 3 == 0
+end
+
+p three_multiple_numbers
+
+# 上記の例では3の倍数のみが配列に格納されて返される
+
+# rejectメソッドはselectのは逆でブロックの評価結果がfalseとなる要素のみを配列にして返すメソッド
+
+not_three_multiple_numbers = ten_times_numbers.reject do |n|
+  n % 3 == 0
+end
+
+p not_three_multiple_numbers
+
+# findメソッドはブロックの戻り値が最初にtrueになった要素を返すメソッド
+
+minimum_three_multiple_number = three_multiple_numbers.find{|n| n % 3 == 0}
+p minimum_three_multiple_number
