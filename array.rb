@@ -184,3 +184,74 @@ p short_ints
 # 1.ブロックパラメータ(|n|や|s|)が1つのみ
 # 2.ブロック内で呼び出すメソッドに引数がない
 # 3.ブロック内で、ブロックパラメータに対してメソッドを1回呼び出す以外の処理がない
+
+# 範囲(Range)オブジェクト
+# Rubyには1から100まで、文字aから文字zまでといった値の範囲を持ったオブジェクトがあり、こうしたオブジェクトのことを範囲オブジェクトと言う。
+# 範囲オブジェクトは下記のように記述することで作成することができる
+# 最後の値を含む場合 最初の値..最後の値(..が2つ)
+# 最後の値を含まない場合 最初の値...最後の値(...が3つ)
+
+one_to_ten = 1..10
+p one_to_ten.sum
+
+one_to_nine = 1...10
+p one_to_nine.sum
+
+a_to_g = "a".."g"
+p a_to_g.map{|s| s.upcase }
+
+a_to_f = "a"..."g"
+p a_to_f.map{|s| s.upcase}
+
+p (1..10).class #classはRangeクラス
+
+# include?(n)メソッドを利用することで、引数の値が範囲に含まれるかを判定できる
+
+p one_to_ten.include?(0)
+p one_to_ten.include?(5)
+p one_to_ten.include?(10)
+p one_to_nine.include?(10)
+
+# 範囲オブジェクトは配列から要素を取得する際のインデックス代わりに利用することができる。
+
+p str[0..3]
+
+# 文字列に対しても同様に取り出すことが可能
+
+text = "Hello!"
+
+p text[0..3]
+
+# 以上以下、以上未満の判定をする際は<,>=のような不等号を利用するよりも範囲オブジェクトを利用したほうが簡潔に記述することができる
+
+def under_age?(age)
+  (0...20).include?(age)
+end
+
+p under_age?(19)
+p under_age?(20)
+
+# 範囲オブジェクトはcase文と組み合わせることも可能
+
+def charge(age)
+  case age
+  when 0..10
+    p "乗車料金は不要です"
+  when 11..18
+    p "乗車料金は300円です"
+  else
+    p "乗車料金は500円です"
+  end
+end
+
+charge(10)
+charge(16)
+charge(26)
+
+# 範囲オブジェクトを利用して値が連続する配列を作成することも可能
+
+range_array = (1..10).to_a
+p range_array
+
+range_str_array = ("a".."g").to_a
+p range_str_array
