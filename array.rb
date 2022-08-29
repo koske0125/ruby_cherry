@@ -137,3 +137,32 @@ p not_three_multiple_numbers
 
 minimum_three_multiple_number = three_multiple_numbers.find{|n| n % 3 == 0}
 p minimum_three_multiple_number
+
+# sumメソッドは要素の合計を求めるメソッド
+
+p not_three_multiple_numbers.sum
+
+# sumメソッドにブロックを与えると、ブロックパラメータに各要素が順に格納され、その戻り値が合計される。
+
+p not_three_multiple_numbers.sum{|n| n * 3}
+
+# sumメソッドの初期値は0だが、引数を指定することで初期値を設定することも可能
+
+p not_three_multiple_numbers.sum(1000){|n| n * 3}
+
+# sumメソッドを利用できるのは数値のみではなく、文字列に対しても使用可能で文字列に使用した場合は連結されて一つの文字列となる
+
+str = ["H","e","l","l","o","!"]
+p str
+p str.sum("")
+
+# joinメソッドは配列の要素を結合して1つの文字列にすることのできるメソッド。
+
+p str.join
+
+# 第一引数を指定することで区切り文字を付与することも可能
+
+p str.join("-")
+
+# sum/joinの使い分けとして、sumではブロック内で文字を指定したり""以外の初期値を与えることができるため、加工が必要な場合はsumを利用し、シンプルな結合はjoinを利用することが多い
+#
