@@ -165,4 +165,22 @@ p str.join
 p str.join("-")
 
 # sum/joinの使い分けとして、sumではブロック内で文字を指定したり""以外の初期値を与えることができるため、加工が必要な場合はsumを利用し、シンプルな結合はjoinを利用することが多い
-#
+# &とシンボルを利用することでより簡潔に記述することも可能
+
+countries = ["japan","america","india"].map{|s| s.upcase }
+p countries
+
+short_countries = ["japan","america","india"].map(&:upcase)
+p short_countries
+
+ints = [1,2,3,4,5,6,7,8,9,10].select{|n| n.odd? }
+p ints
+
+short_ints = [1,2,3,4,5,6,7,8,9,10].select(&:odd?)
+p short_ints
+
+# 上記の例のようにmap/selectメソッドにブロックを渡す代わりに &:メソッド名 という引数を渡すことが可能でより簡潔に記述することが可能
+# &: を利用するには下記の条件が揃っている必要がある
+# 1.ブロックパラメータ(|n|や|s|)が1つのみ
+# 2.ブロック内で呼び出すメソッドに引数がない
+# 3.ブロック内で、ブロックパラメータに対してメソッドを1回呼び出す以外の処理がない
