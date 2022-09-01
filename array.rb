@@ -255,3 +255,31 @@ p range_array
 
 range_str_array = ("a".."g").to_a
 p range_str_array
+
+# 様々な要素の取得方法
+# インデックスを2つ使用することで取得する位置と長さを指定することができる
+# 配列[位置,取得する長さ]
+
+p range_array[2,3]
+
+# value_atメソッドを使用すると取得したい要素のインデックスを複数取得できる
+# 配列.value_at(取得したい位置,取得したい位置...)
+
+p range_str_array.values_at(0,4,6)
+
+# 配列の最後の要素を取得するには配列の長さ-1を指定すれば良い
+
+p range_str_array[range_str_array.size - 1]
+
+# Rubyではインデックスに負の値が利用できる
+# -1なら最後の要素、-2なら最後から二番目の要素となる
+
+p range_str_array[-1]
+p range_str_array[-2]
+
+# またlastメソッド、firstメソッドが用意されており、最後/最初の要素を取得することができる。引数を渡すと最後/最初からn個分の要素を取得することができる
+
+p range_str_array.last
+p range_str_array.last(3)
+p range_str_array.first
+p range_str_array.first(3)
