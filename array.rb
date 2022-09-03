@@ -283,3 +283,23 @@ p range_str_array.last
 p range_str_array.last(3)
 p range_str_array.first
 p range_str_array.first(3)
+
+# 要素の変更方法
+# 値を変更する場合でも負のインデックスが使用できる
+
+range_str_array[-3] = "x" # 後ろから3番目の要素を"x"に変更
+p range_str_array
+
+range_str_array[3,2] = "y" # 4つ目から2要素分を"y"に置き換える
+p range_str_array
+
+# <<ではなくpushメソッドによっても値を追加することができる。
+# pushメソッドを使用すると複数の値を追加することが可能。
+
+range_str_array.push("h","i","j")
+p range_str_array
+
+# 指定した値に一致する要素を削除する場合はdeleteメソッドを使用する
+
+range_str_array.delete("j")
+p range_str_array
