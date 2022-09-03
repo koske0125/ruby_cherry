@@ -303,3 +303,26 @@ p range_str_array
 
 range_str_array.delete("j")
 p range_str_array
+
+# 配列の連結
+# 配列を連結する場合はconcatメソッドか+演算子を利用する
+# concatメソッドは呼び出し元の配列が変更され(破壊的メソッド)、+演算子は新しい配列を作り出す。
+
+first_array = [1,2,3,4,5]
+p first_array
+
+second_array = [6,7,8,9,10]
+p second_array
+
+third_array = [11,12,13,14,15]
+p third_array
+
+first_array.concat(second_array)
+
+p first_array
+
+four_array = second_array + third_array
+p four_array
+
+p second_array
+p third_array
