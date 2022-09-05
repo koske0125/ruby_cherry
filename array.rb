@@ -326,3 +326,6 @@ p four_array
 
 p second_array
 p third_array
+
+# 配列の和集合、差集合、積集合
+# Rubyの配列は|,-,&を使用することで和集合・差集合・積集合を求めることができる
