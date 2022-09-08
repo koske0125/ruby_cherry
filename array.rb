@@ -450,3 +450,15 @@ p qq
 
 rr = "TOP,JG,MID,ADC,SUP".split(",")
 p rr
+
+# 配列のデフォルト値の設定
+# 配列の作成には[]を使用する他、Array.newを利用することもできる
+
+ss = Array.new # 意味としては ss = []と同様
+p ss
+
+tt = Array.new(10) # 引数を渡すと引数分の要素が作成される。要素のデフォルト値はnilとなる
+p tt
+
+uu = Array.new(10,5) # 第二引数を渡すと第二引数が要素の値となる
+p uu
