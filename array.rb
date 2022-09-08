@@ -439,3 +439,14 @@ p %w(日本\ jp アメリカ\ us インド\ ind)
 # %記法内で式展開や改行等を利用したい場合にはwを大文字にし、%Wと記述する
 
 p %W(#{company} KDDI Softbank)
+
+# 文字列を変換して配列にする
+# charsメソッドを利用すると文字列を分解して配列に格納することができる
+
+qq = "Hello".chars
+p qq
+
+# splitメソッドを利用すると引数で渡した区切り文字で文字列を分解して配列に格納する
+
+rr = "TOP,JG,MID,ADC,SUP".split(",")
+p rr
