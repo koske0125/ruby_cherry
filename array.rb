@@ -462,3 +462,18 @@ p tt
 
 uu = Array.new(10,5) # 第二引数を渡すと第二引数が要素の値となる
 p uu
+
+# インデックス付きの繰り返し処理
+# each_with_indexメソッドを使用するとブロックパラメータの第２パラメータにインデックスを渡すことができる
+
+rr.each_with_index{|role,i| puts "#{i}:#{role}"}
+
+# each_with_indexメソッドはeachメソッドの代替としては利用できるが、mapメソッド等では利用できない
+# これを実現したい場合はmapメソッドとwith_indexメソッドを組み合わせることで実現できる
+
+oo = rr.map.with_index {|role,i| "#{i}:#{role}"}
+p oo
+
+# インデックスを0以外の数値から始めたい場合は、with_indexに引数を渡すと指定した値から始めることができる
+
+rr.each.with_index(1) {|role,i| puts "#{i}:#{role}"}
