@@ -372,3 +372,35 @@ p ii
 p jj # 左辺に対応する変数がない残りの要素が格納される
 p kk
 p ll
+
+# 1つの配列を複数の引数やwhenの条件として展開する
+# pushメソッドで配列を渡すと配列の中に配列という形で格納される
+
+mm = []
+mm.push(1,2,3,4,5)
+p mm
+
+nn = [6,7,8]
+
+mm.push(nn)
+p mm
+
+# メソッドの引数に配列を渡す際に配列の中身を展開して引数として渡すには配列の前に*を置く必要がある
+
+mm.delete([6,7,8])
+p mm
+
+mm.push(*nn)
+p mm
+
+# これを応用してcase文のwhenで*を使って複数の条件を使用することもできる
+
+mobile = ["docomo","ドコモ"]
+company = "docomo"
+case company
+when *mobile # mobileの中身が展開され、docomo/ドコモが値のときに実行されるようになる
+  p "ドコモを利用しています"
+end
+
+
+
